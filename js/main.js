@@ -1,8 +1,4 @@
-/* ================================================
-   MAIN.JS — Ahmad Bilal Portfolio
-   Interaction logic: sticky header, mobile nav, 
-   sliders, filters, accordions, typing, smooth scroll
-   ================================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
@@ -19,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactFormSubmission();
 });
 
-/* --- Sticky Header --- */
+
 function initStickyHeader() {
   const header = document.querySelector('header');
   window.addEventListener('scroll', () => {
@@ -31,7 +27,7 @@ function initStickyHeader() {
   });
 }
 
-/* --- Mobile Navigation --- */
+
 function initMobileNav() {
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
@@ -50,7 +46,7 @@ function initMobileNav() {
   });
 }
 
-/* --- Hero Headline Typing Animation --- */
+
 function initTypingAnimation() {
   const typingSpan = document.getElementById('typing-text');
   if (!typingSpan) return;
@@ -73,21 +69,25 @@ function initTypingAnimation() {
     if (isDeleting) {
       typingSpan.textContent = currentPhrase.substring(0, characterIndex - 1);
       characterIndex--;
-      typingSpeed = 50; // speed up when deleting
+      typingSpeed = 50; 
+
     } else {
       typingSpan.textContent = currentPhrase.substring(0, characterIndex + 1);
       characterIndex++;
-      typingSpeed = 100; // default typing speed
+      typingSpeed = 100; 
+
     }
 
     if (!isDeleting && characterIndex === currentPhrase.length) {
-      // Pause at full word
+      
+
       typingSpeed = 2000;
       isDeleting = true;
     } else if (isDeleting && characterIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
-      // Pause before starting next word
+      
+
       typingSpeed = 500;
     }
 
@@ -97,14 +97,15 @@ function initTypingAnimation() {
   type();
 }
 
-/* --- Active Navigation Item Highlight on Scroll --- */
+
 function initActiveNavHighlighter() {
   const sections = document.querySelectorAll('section, hero');
   const navLinks = document.querySelectorAll('nav ul li a');
 
   const options = {
     root: null,
-    rootMargin: '-50% 0px -50% 0px', // Trigger when section occupies center of viewport
+    rootMargin: '-50% 0px -50% 0px', 
+
     threshold: 0
   };
 
@@ -127,7 +128,7 @@ function initActiveNavHighlighter() {
   });
 }
 
-/* --- Work Process Line Scroll Trigger --- */
+
 function initProcessTimeline() {
   const timeline = document.querySelector('.process-timeline');
   const progressLine = document.querySelector('.process-line-progress');
@@ -137,14 +138,16 @@ function initProcessTimeline() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Animate the line
+        
+
         if (window.innerWidth > 768) {
           progressLine.style.width = '100%';
         } else {
           progressLine.style.height = '100%';
         }
 
-        // Animate active steps with a slight cascade delay
+        
+
         steps.forEach((step, idx) => {
           setTimeout(() => {
             step.classList.add('active');
@@ -157,7 +160,7 @@ function initProcessTimeline() {
   observer.observe(timeline);
 }
 
-/* --- Portfolio Items Filter & Show More --- */
+
 function resetAllOtherVideos(currentCard) {
   const projectCards = document.querySelectorAll('.project-card');
   projectCards.forEach(card => {
@@ -270,15 +273,18 @@ function initPortfolioFilters() {
       const videoId = thumb.getAttribute('data-video-id');
       if (!videoId) return;
 
-      // 1. Reset any other active videos
+      
+
       resetAllOtherVideos(card);
 
-      // 2. Add visual focus class and background blur/dim states
+      
+
       card.classList.add('highlighted');
       if (projectsGrid) projectsGrid.classList.add('focus-active');
       if (portfolioSection) portfolioSection.classList.add('focus-active');
 
-      // 3. Load the autoplay muted preview inline with dynamic spinner loading animation
+      
+
       if (card.hasAttribute('data-clicked')) return;
 
       thumb.innerHTML = `
@@ -305,14 +311,16 @@ function initPortfolioFilters() {
     });
 
     card.addEventListener('mouseleave', () => {
-      // 1. Remove focus and zoom classes
+      
+
       card.classList.remove('highlighted');
       if (projectsGrid) projectsGrid.classList.remove('focus-active');
       if (portfolioSection) portfolioSection.classList.remove('focus-active');
 
       if (card.hasAttribute('data-clicked')) return;
 
-      // 2. Revert preview player back to image thumbnail
+      
+
       const thumb = card.querySelector('.project-thumbnail');
       if (!thumb) return;
       const videoId = thumb.getAttribute('data-video-id');
@@ -342,7 +350,8 @@ function initPortfolioFilters() {
       card.setAttribute('data-clicked', 'true');
       card.classList.add('highlighted');
 
-      // Clear the background focus dimming when active video is clicked
+      
+
       if (projectsGrid) projectsGrid.classList.remove('focus-active');
       if (portfolioSection) portfolioSection.classList.remove('focus-active');
 
@@ -371,7 +380,7 @@ function initPortfolioFilters() {
   });
 }
 
-/* --- Testimonials 3D Slider (Coverflow style) --- */
+
 function initTestimonialSlider() {
   const cards = document.querySelectorAll('.testimonial-card');
   const dotsContainer = document.querySelector('.slider-dots');
@@ -382,7 +391,8 @@ function initTestimonialSlider() {
   let currentIndex = 0;
   let autoPlayInterval;
 
-  // Create indicator dots dynamically
+  
+
   cards.forEach((_, index) => {
     const dot = document.createElement('span');
     dot.classList.add('slider-dot');
@@ -400,7 +410,8 @@ function initTestimonialSlider() {
     cards.forEach((card, index) => {
       card.classList.remove('active', 'prev', 'next');
       
-      // Calculate active, prev and next items
+      
+
       if (index === currentIndex) {
         card.classList.add('active');
       } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
@@ -410,7 +421,8 @@ function initTestimonialSlider() {
       }
     });
 
-    // Update dots
+    
+
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentIndex);
     });
@@ -431,11 +443,13 @@ function initTestimonialSlider() {
     updateSlider();
   }
 
-  // Event Listeners
+  
+
   if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
   if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
 
-  // Auto Play
+  
+
   function startAutoPlay() {
     autoPlayInterval = setInterval(nextSlide, 5000);
   }
@@ -445,12 +459,13 @@ function initTestimonialSlider() {
     startAutoPlay();
   }
 
-  // Initialize
+  
+
   updateSlider();
   startAutoPlay();
 }
 
-/* --- FAQ Accordion Collapse/Expand --- */
+Expand --- */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
   if (faqItems.length === 0) return;
@@ -546,7 +561,8 @@ function initCircularRevealWidget() {
 
 /**
  * Handles playing the portfolio videos dynamically.
- * If opened via local file protocol (file:///), redirects to youtube.com in a new tab to avoid Error 153.
+ * If opened via local file protocol (file:
+
  * Otherwise, embeds the youtube-nocookie iframe directly inside the card for seamless autoplay.
  * @param {HTMLElement} element - The project-thumbnail click target.
  */

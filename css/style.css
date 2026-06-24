@@ -1,13 +1,10 @@
-/* ================================================
-   STYLE.CSS — Ahmad Bilal Portfolio
-   Core design system, layouts, components and pages
-   ================================================ */
 
-/* --- Fonts & Root Variables --- */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Colors from Colors.md */
+  
   --bg-primary: #080B14;
   --bg-card: #0F1320;
   --bg-hover: #161B2E;
@@ -29,16 +26,16 @@
   --border-default: rgba(255, 255, 255, 0.07);
   --border-hover: rgba(167, 139, 250, 0.35);
 
-  /* Fonts */
+  
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Layout */
+  
   --header-height: 80px;
   --container-max: 1200px;
 }
 
-/* --- Base & Reset Styles --- */
+
 *,
 *::before,
 *::after {
@@ -63,7 +60,7 @@ body {
   position: relative;
 }
 
-/* --- Typography --- */
+
 h1,
 h2,
 h3,
@@ -87,7 +84,7 @@ a {
   transition: all 0.25s ease;
 }
 
-/* --- Global Layout Elements --- */
+
 .container {
   width: 90%;
   max-width: var(--container-max);
@@ -103,7 +100,7 @@ section {
   overflow: hidden;
 }
 
-/* --- Top Accent Bar --- */
+
 .accent-bar {
   position: fixed;
   top: 0;
@@ -116,7 +113,7 @@ section {
   animation: accentBarScroll 8s linear infinite;
 }
 
-/* --- Ambient Orbs --- */
+
 .ambient-orbs-container {
   position: absolute;
   top: 0;
@@ -170,14 +167,14 @@ section {
   width: 220px;
   height: 220px;
   background: var(--violet);
-  /* Changed from var(--amber) to var(--violet) as requested */
+  
   opacity: 0.15;
   bottom: 80px;
   left: 15%;
   animation: orb 14s ease-in-out infinite;
 }
 
-/* --- Badge & Tag Styles --- */
+
 .tag-badge {
   display: inline-flex;
   align-items: center;
@@ -224,7 +221,7 @@ section {
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* --- Section Headers --- */
+
 .section-title-wrap {
   text-align: center;
   max-width: 650px;
@@ -245,7 +242,7 @@ section {
   color: var(--text-secondary);
 }
 
-/* --- Buttons --- */
+
 .btn-group {
   display: flex;
   gap: 16px;
@@ -302,11 +299,11 @@ section {
   box-shadow: 0 6px 24px rgba(217, 119, 6, 0.4);
 }
 
-/* --- Sticky Header Navigation --- */
+
 header {
   position: fixed;
   top: 4px;
-  /* leaves room for accent bar */
+  
   left: 0;
   width: 100%;
   height: var(--header-height);
@@ -401,7 +398,7 @@ nav ul li a.active::after {
   transform-origin: left;
 }
 
-/* Mobile Hamburger Menu */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -421,7 +418,7 @@ nav ul li a.active::after {
   transition: all 0.3s ease;
 }
 
-/* --- Hero Section --- */
+
 .hero {
   position: relative;
   z-index: 1;
@@ -508,7 +505,7 @@ nav ul li a.active::after {
   animation: blink 1s step-end infinite;
 }
 
-/* Mini Stats Row inside Hero */
+
 .hero-stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -547,7 +544,7 @@ nav ul li a.active::after {
   letter-spacing: 1px;
 }
 
-/* --- Trusted By Section --- */
+
 .trusted-by {
   padding: 40px 0;
   border-top: 1px solid var(--border-default);
@@ -601,7 +598,7 @@ nav ul li a.active::after {
   filter: none;
 }
 
-/* --- About Me Section --- */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -633,7 +630,7 @@ nav ul li a.active::after {
   max-width: 480px;
   aspect-ratio: 1;
   border-radius: 50%;
-  /* perfect circle container */
+  
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(15, 19, 32, 0.6);
   padding: 8px;
@@ -642,7 +639,7 @@ nav ul li a.active::after {
   overflow: visible;
 }
 
-/* Circular Reveal Widget Core */
+
 .circular-reveal-widget {
   position: relative;
   width: 100%;
@@ -651,7 +648,7 @@ nav ul li a.active::after {
   overflow: hidden;
 }
 
-/* Hover Image Overlay */
+
 .circular-image-overlay {
   position: absolute;
   inset: 0;
@@ -686,7 +683,7 @@ nav ul li a.active::after {
   transform: scale(1);
 }
 
-/* Center Text Branding Box */
+
 .circular-center-box {
   position: absolute;
   inset: 0;
@@ -743,7 +740,7 @@ nav ul li a.active::after {
   letter-spacing: 0.5px;
 }
 
-/* Rotating SVG Ring */
+
 .circular-svg-ring {
   position: absolute;
   inset: 0;
@@ -754,12 +751,12 @@ nav ul li a.active::after {
   animation: widgetRotate 30s linear infinite;
 }
 
-/* Pause rotation on hovering any text segment */
+
 .circular-reveal-widget:hover .circular-svg-ring {
   animation-play-state: paused;
 }
 
-/* Text typography & color */
+
 .widget-text-segment {
   font-family: var(--font-heading);
   font-size: 11px;
@@ -839,7 +836,7 @@ nav ul li a.active::after {
   margin-bottom: 36px;
 }
 
-/* --- Values / Vision / Mission Cards --- */
+
 .values-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -944,15 +941,15 @@ nav ul li a.active::after {
   color: var(--cyan-light);
 }
 
-/* --- Video Scroll Section --- */
+
 .video-scroll-section {
   position: relative;
   height: 100vh;
   padding: 0;
-  /* scroll container track length */
+  
   background: var(--bg-primary);
   margin-top: -1px;
-  /* seamless boundary */
+  
 }
 
 .video-scroll-container {
@@ -1044,7 +1041,7 @@ nav ul li a.active::after {
 
 .video-scroll-btn {
   background: #84cc16;
-  /* matching React shader btn */
+  
   color: #080B14 !important;
   box-shadow: 0 4px 24px rgba(132, 204, 22, 0.45);
   pointer-events: auto;
@@ -1055,7 +1052,7 @@ nav ul li a.active::after {
   box-shadow: 0 6px 30px rgba(132, 204, 22, 0.65);
 }
 
-/* --- Statistics Banner Section --- */
+
 .stats-banner {
   padding: 40px 0;
   background: linear-gradient(135deg, var(--violet), var(--cyan));
@@ -1126,7 +1123,7 @@ nav ul li a.active::after {
   opacity: 0.8;
 }
 
-/* --- Services Section --- */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1265,7 +1262,7 @@ nav ul li a.active::after {
   transform: translateX(4px);
 }
 
-/* --- Work Process Section --- */
+
 .process-timeline {
   display: flex;
   justify-content: space-between;
@@ -1336,7 +1333,7 @@ nav ul li a.active::after {
   line-height: 1.5;
 }
 
-/* --- Portfolio Showcase Section --- */
+
 .portfolio-filters {
   display: flex;
   justify-content: center;
@@ -1389,7 +1386,7 @@ nav ul li a.active::after {
   border-color: var(--border-hover);
 }
 
-/* Focus active state for the entire portfolio grid and surrounding background */
+
 .portfolio-grid {
   transition: all 0.4s ease;
 }
@@ -1411,7 +1408,7 @@ nav ul li a.active::after {
   pointer-events: auto;
 }
 
-/* Blur the background canvas when focused */
+
 .portfolio.focus-active .section-flowfield {
   filter: blur(10px);
   opacity: 0.1;
@@ -1436,7 +1433,7 @@ nav ul li a.active::after {
   border: none;
 }
 
-/* Premium video loader spinner */
+
 .video-loader {
   position: absolute;
   inset: 0;
@@ -1504,7 +1501,7 @@ nav ul li a.active::after {
   background: rgba(8, 11, 20, 0.35);
 }
 
-/* Fallback play icon when URL isn't loaded */
+
 .video-fallback-overlay {
   position: absolute;
   inset: 0;
@@ -1604,7 +1601,7 @@ nav ul li a.active::after {
   border-color: var(--violet);
 }
 
-/* --- Testimonials Section (3D Coverflow Slider) --- */
+
 .testimonials-slider-container {
   position: relative;
   width: 100%;
@@ -1741,7 +1738,7 @@ nav ul li a.active::after {
   border-radius: 10px;
 }
 
-/* --- FAQ Accordion Section --- */
+
 .faq-container {
   max-width: 720px;
   margin: 0 auto;
@@ -1805,13 +1802,13 @@ nav ul li a.active::after {
   transition: transform 0.3s ease;
 }
 
-/* horizontal bar */
+
 .faq-icon::before {
   width: 12px;
   height: 2px;
 }
 
-/* vertical bar */
+
 .faq-icon::after {
   width: 2px;
   height: 12px;
@@ -1844,7 +1841,7 @@ nav ul li a.active::after {
   line-height: 1.6;
 }
 
-/* --- Contact Section --- */
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1961,7 +1958,7 @@ nav ul li a.active::after {
   fill: currentColor;
 }
 
-/* Contact Form */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -2025,7 +2022,7 @@ nav ul li a.active::after {
   font-weight: 500;
 }
 
-/* Contact Form Success Message Animation */
+
 .form-success-message {
   display: flex;
   flex-direction: column;
@@ -2155,7 +2152,7 @@ nav ul li a.active::after {
   }
 }
 
-/* --- Footer --- */
+
 footer {
   border-top: 1px solid var(--border-default);
   padding: 60px 0 30px 0;
@@ -2288,10 +2285,7 @@ footer {
   stroke: currentColor;
 }
 
-/* ================================================
-   RESPONSIVE DESIGN SYSTEM
-   Media Queries
-   ================================================ */
+
 
 @media (max-width: 1024px) {
   .section-title {
@@ -2332,7 +2326,7 @@ footer {
     display: flex;
   }
 
-  /* Hamburger Active Animation */
+  
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -2376,7 +2370,7 @@ footer {
 
   .header-cta {
     display: none;
-    /* Hide top CTA in mobile, let it show in menu or hero */
+    
   }
 
   .hero-title {
@@ -2476,7 +2470,7 @@ footer {
   .testimonial-card.prev,
   .testimonial-card.next {
     display: none;
-    /* Hide 3D cards on mobile for simple slider */
+    
   }
 
   .testimonials-slider-container {

@@ -1,8 +1,4 @@
-/* ================================================
-   ANIMATIONS.JS — Ahmad Bilal Portfolio
-   Scroll reveal observers, counting numbers, and 
-   micro-interactions for immersive experience
-   ================================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
@@ -11,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoScrollAnimation();
 });
 
-/* --- Scroll Reveal observer --- */
+
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   if (revealElements.length === 0) return;
@@ -20,13 +16,15 @@ function initScrollReveal() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
-        // Unobserve once revealed to keep layout performant
+        
+
         observer.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -10% 0px', // Trigger slightly before scrolling into view
+    rootMargin: '0px 0px -10% 0px', 
+
     threshold: 0.1
   });
 
@@ -35,7 +33,7 @@ function initScrollReveal() {
   });
 }
 
-/* --- Numerical Stats Counter --- */
+
 function initStatsCounter() {
   const statNumbers = document.querySelectorAll('.stat-number');
   if (statNumbers.length === 0) return;
@@ -48,7 +46,8 @@ function initStatsCounter() {
         const suffix = target.getAttribute('data-suffix') || '';
         
         animateCounter(target, targetValue, suffix);
-        observer.unobserve(target); // Animate once
+        observer.unobserve(target); 
+
       }
     });
   }, { threshold: 0.5 });
@@ -60,7 +59,8 @@ function initStatsCounter() {
 
 function animateCounter(element, targetValue, suffix) {
   let startValue = 0;
-  const duration = 2000; // 2 seconds
+  const duration = 2000; 
+
   const startTime = performance.now();
 
   function updateCount(currentTime) {

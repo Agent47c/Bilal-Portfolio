@@ -1,8 +1,4 @@
-/* ================================================
-   FLOWFIELD.JS — Multi-Section Particle Fluid Simulation
-   Renders custom crisp canvas flow fields per section with 
-   Intersection Observer for peak 60fps performance.
-   ================================================ */
+
 
 class FlowFieldInstance {
   constructor(canvas) {
@@ -12,11 +8,16 @@ class FlowFieldInstance {
     this.active = false;
     this.animationId = null;
     
-    // Configurable parameters
-    this.scale = 0.004; // Trig noise scale
-    this.speed = 1.0;   // Velocity multiplier
-    this.trailOpacity = 0.08; // Trail length
-    this.colors = ['#7C3AED', '#06B6D4', '#34D399']; // Violet, Cyan, Emerald
+    
+
+    this.scale = 0.004; 
+
+    this.speed = 1.0;   
+
+    this.trailOpacity = 0.08; 
+
+    this.colors = ['#7C3AED', '#06B6D4', '#34D399']; 
+
     this.mouse = { x: null, y: null, radius: 150 };
 
     this.init();
@@ -25,7 +26,8 @@ class FlowFieldInstance {
   init() {
     this.resize();
     
-    // Mouse interaction scoped to parent section
+    
+
     const parent = this.canvas.parentElement;
     parent.addEventListener('mousemove', (e) => this.onMouseMove(e));
     parent.addEventListener('mouseleave', () => this.onMouseLeave());
@@ -36,7 +38,8 @@ class FlowFieldInstance {
     this.width = this.canvas.width = parent.offsetWidth;
     this.height = this.canvas.height = parent.offsetHeight;
     
-    // Adjust particle count based on section area to remain highly performant
+    
+
     const area = this.width * this.height;
     this.numParticles = Math.min(250, Math.max(50, Math.floor(area / 8000)));
     
