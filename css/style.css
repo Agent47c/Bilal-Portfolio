@@ -639,7 +639,7 @@ nav ul li a.active::after {
   padding: 8px;
   z-index: 2;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Circular Reveal Widget Core */
