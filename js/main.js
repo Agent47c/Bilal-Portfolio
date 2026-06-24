@@ -473,7 +473,6 @@ function initTestimonialSlider() {
   startAutoPlay();
 }
 
-Expand --- */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
   if (faqItems.length === 0) return;
