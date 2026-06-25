@@ -52,10 +52,9 @@ function initTypingAnimation() {
   if (!typingSpan) return;
 
   const phrases = [
-    'Talking Head Videos',
-    'SaaS Explainer Videos',
-    'Podcast Videos',
-    'Motion Design Content'
+    'SaaS Videos',
+    'Explainer Videos',
+    'Motion Graphics'
   ];
 
   let phraseIndex = 0;
