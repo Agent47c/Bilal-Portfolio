@@ -2504,6 +2504,25 @@ footer {
     padding: 8px 16px;
     font-size: 12px;
   }
+
+  .video-scroll-content-wrap {
+    padding: 6vh 16px;
+  }
+
+  .video-scroll-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .video-scroll-subtitle {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .video-scroll-btn {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2518,6 +2537,15 @@ footer {
 
   .btn {
     width: 100%;
+  }
+
+  .video-scroll-title {
+    font-size: 28px;
+  }
+
+  .video-scroll-btn {
+    width: auto !important;
+    padding: 12px 24px;
   }
 
   .stats-grid {
