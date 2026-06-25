@@ -299,9 +299,9 @@ function initPortfolioFilters() {
         <div class="video-loader">
           <div class="video-loader-spinner"></div>
         </div>
-        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0" 
+        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1" 
                 title="YouTube video player" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" 
                 allowfullscreen>
         </iframe>
       `;
@@ -367,9 +367,9 @@ function initPortfolioFilters() {
         <div class="video-loader">
           <div class="video-loader-spinner"></div>
         </div>
-        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=0" 
+        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=1" 
                 title="YouTube video player" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" 
                 allowfullscreen>
         </iframe>
       `;
