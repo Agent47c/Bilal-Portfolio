@@ -1,10 +1,7 @@
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  
+
   --bg-primary: #080B14;
   --bg-card: #0F1320;
   --bg-hover: #161B2E;
@@ -26,11 +23,11 @@
   --border-default: rgba(255, 255, 255, 0.07);
   --border-hover: rgba(167, 139, 250, 0.35);
 
-  
+
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  
+
   --header-height: 80px;
   --container-max: 1200px;
 }
@@ -167,7 +164,7 @@ section {
   width: 220px;
   height: 220px;
   background: var(--violet);
-  
+
   opacity: 0.15;
   bottom: 80px;
   left: 15%;
@@ -303,7 +300,7 @@ section {
 header {
   position: fixed;
   top: 4px;
-  
+
   left: 0;
   width: 100%;
   height: var(--header-height);
@@ -630,7 +627,7 @@ nav ul li a.active::after {
   max-width: 480px;
   aspect-ratio: 1;
   border-radius: 50%;
-  
+
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(15, 19, 32, 0.6);
   padding: 8px;
@@ -946,10 +943,10 @@ nav ul li a.active::after {
   position: relative;
   height: 100vh;
   padding: 0;
-  
+
   background: var(--bg-primary);
   margin-top: -1px;
-  
+
 }
 
 .video-scroll-container {
@@ -1041,7 +1038,7 @@ nav ul li a.active::after {
 
 .video-scroll-btn {
   background: #84cc16;
-  
+
   color: #080B14 !important;
   box-shadow: 0 4px 24px rgba(132, 204, 22, 0.45);
   pointer-events: auto;
@@ -2326,7 +2323,7 @@ footer {
     display: flex;
   }
 
-  
+
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -2370,7 +2367,7 @@ footer {
 
   .header-cta {
     display: none;
-    
+
   }
 
   .hero-title {
@@ -2470,7 +2467,7 @@ footer {
   .testimonial-card.prev,
   .testimonial-card.next {
     display: none;
-    
+
   }
 
   .testimonials-slider-container {
